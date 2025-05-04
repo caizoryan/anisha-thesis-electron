@@ -7,6 +7,7 @@ const createWindow = () => {
 		width: 800,
 		height: 600,
 		webPreferences: {
+			webSecurity: false,
 			preload: path.join(process.cwd(), 'preload.js')
 		}
 	})

@@ -677,10 +677,11 @@ decision_tree.forEach((node, i) => {
   // }
 
   let pause = () => {
-    node.controller?.focus(false)
-    viddy.volume = 0;
-    viddy.playbackRate = 0.001
-    viddy.currentTime = 0
+    viddy.pause()
+    // node.controller?.focus(false)
+    // viddy.volume = 0;
+    // viddy.playbackRate = 0.001
+    // viddy.currentTime = 0
   }
 
   let play = () => {
