@@ -1,0 +1,297 @@
+[
+  {
+    "src": "1_A1-2.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 1
+  },
+  {
+    "src": "2_OP_lookaround.mp4",
+    "options": [
+      {
+        "text": "Look Around",
+        "next": 2
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "3_A3-4.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 3
+  },
+  {
+    "src": "4_OP_Getup&Explore.mp4",
+    "options": [
+      {
+        "text": "Get up and explore",
+        "next": 4
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": null
+  },
+  {
+    "src": "5_A5-B3.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 5
+  },
+  {
+    "src": "6_OP_Interact.mp4",
+    "options": [
+      {
+        "text": "Interact",
+        "next": 6
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "7_NotReal.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 7
+  },
+  {
+    "src": "8_B6.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 8
+  },
+  {
+    "src": "9_OP_Run.mp4",
+    "options": [
+      {
+        "text": "Run",
+        "next": 9
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "10_C2.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 10
+  },
+  {
+    "src": "11_OP_Explore.mp4",
+    "options": [
+      {
+        "text": "Explore",
+        "next": 11
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "12_C3-4.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 12
+  },
+  {
+    "src": "13_OP_Explore.mp4",
+    "options": [
+      {
+        "text": "run into tunnel",
+        "next": 14
+      },
+      {
+        "text": "explore rest of the room",
+        "next": 13
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "14_C5-7.mp4",
+    "options": [
+      {
+        "text": "Run into tunnel",
+        "next": 14
+      },
+      {
+        "text": "Explore",
+        "next": 16
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 14
+  },
+  {
+    "src": "15_Runintotunnel.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 0
+  },
+  {
+    "src": "16_C7.mp4",
+    "options": [
+      {
+        "text": "random",
+        "next": 2
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "17_C8.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 17
+  },
+  {
+    "src": "18_D3-6.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 18
+  },
+  {
+    "src": "19_OP_dinner-exit.mp4",
+    "options": [
+      {
+        "text": "Use Exit Door",
+        "next": 19
+      },
+      {
+        "text": "Go to dinner with friends",
+        "next": 20
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "20_choose-exit.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "21_choose-dinner.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 21
+  },
+  {
+    "src": "22_E3.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 22
+  },
+  {
+    "src": "23_OP_Decidetosit.mp4",
+    "options": [
+      {
+        "text": "Choose to sit",
+        "next": 23
+      },
+      {
+        "text": "Choose to leave",
+        "next": 24
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  },
+  {
+    "src": "24_choose-sitwthem.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 0
+  },
+  {
+    "src": "25_choose-toleave.mp4",
+    "options": [],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    },
+    "auto": 0
+  },
+  {
+    "src": "26_farewell.mp4",
+    "options": [
+      {
+        "text": "random",
+        "next": 2
+      }
+    ],
+    "subtitles": [],
+    "controller": {
+      "viddy": {}
+    }
+  }
+]
