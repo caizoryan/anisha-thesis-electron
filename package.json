@@ -23,6 +23,8 @@
     "electron": "^36.1.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "@serialport/parser-readline": "^13.0.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "serialport": "^13.0.0"
   }
 }

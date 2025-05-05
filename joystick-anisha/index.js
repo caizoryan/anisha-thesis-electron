@@ -2,7 +2,6 @@ const { SerialPort } = require('serialport')
 const { ReadlineParser } = require('@serialport/parser-readline')
 const cors = require("cors");
 const express_ws = require('express-ws');
-
 const express = require('express')
 
 const app = express()
