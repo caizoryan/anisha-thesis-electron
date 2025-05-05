@@ -8,7 +8,9 @@ const createWindow = () => {
 		height: 600,
 		webPreferences: {
 			webSecurity: false,
-			preload: path.join(process.cwd(), 'preload.js')
+			preload: path.join(process.cwd(), 'preload.js'),
+			// preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+			nodeIntegration: true,
 		}
 	})
 

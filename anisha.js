@@ -555,6 +555,7 @@ function DebugDom() {
       body: JSON.stringify(body),
     });
   }
+
   let auto_select = sig(false)
   let duration = sig(1)
   let current_time = sig(0)
@@ -667,21 +668,9 @@ decision_tree.forEach((node, i) => {
   if (node.src.includes("OP")) {
     viddy.loop = true
   }
-  // viddy.ontimeupdate = (e) => {
-  //   // loop
-  //   if(viddy.duration - viddy.currentTime <= 1 
-  //      && node.src.includes("OP")) {
-  //       viddy.currentTime = 0;
-  //       viddy.play();
-  //   }
-  // }
 
   let pause = () => {
     viddy.pause()
-    // node.controller?.focus(false)
-    // viddy.volume = 0;
-    // viddy.playbackRate = 0.001
-    // viddy.currentTime = 0
   }
 
   let play = () => {
