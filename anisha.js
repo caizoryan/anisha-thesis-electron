@@ -43,7 +43,6 @@ let cursor_move_y = (val) => {
 let scale = 20
 
 function updatedata(data) {
-  console.log("getting", data)
   press.set(data.pressed)
 
   if (data.x > 580 && data.x < 900) {
@@ -161,7 +160,7 @@ const play_fn = (i) => () => {
   decision_tree[i].controller?.play()
 }
 
-setTimeout(() => play_fn(12)(), 100)
+setTimeout(() => play_fn(14)(), 100)
 
 const Root = () => {
   setTimeout(() => {
@@ -273,7 +272,7 @@ const Root = () => {
         style: "position:fixed",
         onclick: () => debug.set(!debug())
       }, "debug"],
-      //mem(() => debug() ? d() : "")
+      mem(() => debug() ? d() : "")
     ])
 
   return hdom(
@@ -665,8 +664,9 @@ decision_tree.forEach((node, i) => {
         return
       }
 
-      current.set(node.auto)
-      decision_tree[node.auto].controller.play()
+      play_fn(node.auto)()
+      // current.set(node.auto)
+      // decision_tree[node.auto].controller.play()
       console.log("playing", decision_tree[node.auto].src)
     }
   }
@@ -681,16 +681,15 @@ decision_tree.forEach((node, i) => {
 
   let play = () => {
     console.log("playing", node.src)
-    node.controller?.focus(true)
     viddy.currentTime = 0
     viddy.play();
     viddy.volume = 1;
     viddy.playbackRate = 1
+    node.controller?.focus(true)
   }
 
   node.controller = {
     viddy,
-    // on play check if there is an auto, and play that too so autplay works
     play,
     pause,
     seek: (t) => viddy.currentTime = t,
@@ -709,57 +708,3 @@ decision_tree.forEach((node, i) => {
 })
 
 render(Root, document.body)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
