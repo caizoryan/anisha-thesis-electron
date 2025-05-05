@@ -8,5 +8,6 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('versions',
   {
     fucker: () => "ass",
+    socket: (cb) => ipcRenderer.on('data', (_event, value) => cb(value)),
     data: () => ipcRenderer.invoke("ping")
   })

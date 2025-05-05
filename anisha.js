@@ -42,9 +42,8 @@ let cursor_move_y = (val) => {
 
 let scale = 20
 
-ws.onmessage = (e) => {
-  let data = JSON.parse(e.data)
-  console.log(data.pressed)
+function updatedata(data) {
+  console.log("getting", data)
   press.set(data.pressed)
 
   if (data.x > 580 && data.x < 900) {
@@ -70,6 +69,13 @@ ws.onmessage = (e) => {
   if (data.y < 50) {
     cursor_move_y(-scale)
   }
+}
+
+versions.socket(updatedata)
+ws.onmessage = (e) => {
+  let data = JSON.parse(e.data)
+  console.log(data.pressed)
+  updatedata(data)
 }
 
 

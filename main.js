@@ -4,6 +4,7 @@ import fs from "fs"
 import { SerialPort } from 'serialport'
 import { ReadlineParser } from '@serialport/parser-readline'
 
+let mainwindow = undefined;
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 800,
@@ -16,6 +17,7 @@ const createWindow = () => {
 	})
 
 	win.loadFile('index.html')
+	mainwindow = win
 }
 
 app.whenReady().then(() => {
@@ -39,6 +41,7 @@ function safeParse(data) {
 }
 
 function updateSockets() {
+	mainwindow.webContents.send('data', data)
 	// Object.keys(sockets).forEach((key) => {
 	// 	sockets[key].send(JSON.stringify(data))
 	// })
