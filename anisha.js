@@ -18,9 +18,7 @@ const M = mut({
 document.M = M
 let ws = new WebSocket("ws://localhost:8881/data")
 
-ws.onopen = () => {
-  console.log("connected")
-}
+ws.onopen = () => { console.log("connected") }
 
 let cursor_x = sig(0)
 let cursor_y = sig(0)
@@ -77,6 +75,47 @@ ws.onmessage = (e) => {
   updatedata(data)
 }
 
+let lineBuffer = []
+let latestValue = ""
+
+function safeParse(data) {
+  try {
+    return JSON.parse(data)
+  } catch (e) {
+    return null
+  }
+}
+
+window.onclick = async () => {
+  let port = await navigator.serial.requestPort({});
+  port.onconnect = (e) => console.log("connected", e)
+  await port.open({ baudRate: 9600 });
+  console.log("port open:", port, port.getInfo)
+
+  const textDecoder = new TextDecoderStream();
+  const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+  const reader = textDecoder.readable.getReader();
+
+  // Listen to data coming from the serial device.
+  while (true) {
+    if (lineBuffer > 8192) {
+      lineBuffer = lineBuffer.slice(4096)
+    }
+
+    const { value } = await reader.read();
+    lineBuffer += value;
+    let lines = lineBuffer.split('\n');
+
+    if (lines.length > 1) {
+      lineBuffer = lines.pop();
+      latestValue = lines.pop().trim();
+      let data = safeParse(latestValue)
+      if (data) updatedata(data)
+      console.log(latestValue)
+    }
+  }
+}
+
 
 // basic styling
 let style = document.createElement("style")
@@ -121,12 +160,15 @@ function animate(d) {
 
 
 let css = mut([`
+*{
+  font-family: monospace;
+}
  button.option {
     border: 1px solid white;
     background: #222a;
     color: white;
     font-size: 1.9em;
-    font-family: hermit;
+    font-family: monospace;
     min-width: 200px;
     text-transform: uppercase;
     padding: .5em;
@@ -160,7 +202,7 @@ const play_fn = (i) => () => {
   decision_tree[i].controller?.play()
 }
 
-setTimeout(() => play_fn(14)(), 100)
+setTimeout(() => play_fn(0)(), 100)
 
 const Root = () => {
   setTimeout(() => {
@@ -268,11 +310,11 @@ const Root = () => {
   let three = () =>
     hdom(["#THREE", { style: s },
       ["#decisions", { style: dec }, next_btns],
-      ["button", {
-        style: "position:fixed",
-        onclick: () => debug.set(!debug())
-      }, "debug"],
-      mem(() => debug() ? d() : "")
+      // ["button", {
+      //   style: "position:fixed",
+      //   onclick: () => debug.set(!debug())
+      // }, "debug"],
+      // mem(() => debug() ? d() : "")
     ])
 
   return hdom(
@@ -438,7 +480,7 @@ css.push(`
     border: 1px solid white;
   }
 
-  video {
+ video {
     max-width: 100%;
   }
 
@@ -665,9 +707,6 @@ decision_tree.forEach((node, i) => {
       }
 
       play_fn(node.auto)()
-      // current.set(node.auto)
-      // decision_tree[node.auto].controller.play()
-      console.log("playing", decision_tree[node.auto].src)
     }
   }
 
